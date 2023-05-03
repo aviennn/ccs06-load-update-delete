@@ -2,26 +2,34 @@
 
 require "config.php";
 
-use App\Student;
+use App\Pets;
 
 try {
-	Student::register('Richard', 'Feynman', 'richard@feynman.com');
-	echo "<li>Added 1 student";
+	Pets::register('Eumppappa','Male', '2002-10-28', 'Gyuvin', 'gyuvin@kim.com','2097, Marisol, Angeles City', '09234567801');
+	echo "<li>Added 1 pet";
 
-	$students = [
-		[
-			'first_name' => 'Albert',
-			'last_name' => 'Einstein',
-			'email' => 'albert@einstein.com'
+	$pets = [
+		[	
+			'name' => 'Layla',
+			'gender' => 'Male',
+			'birthdate' => '2003-08-03',
+			'owner' => 'Jake',
+			'email' => 'jake@sim.com',
+			'address' => '748, McArthur Highway, Mabalacat City',
+			'contact_number' => '09773942061'
 		],
 		[
-			'first_name' => 'Paul',
-			'last_name' => 'Erdos',
-			'email' => 'paul@erdos.com'
+			'name' => 'Hanbinnie',
+			'gender' => 'Female',
+			'birthdate' => '2004-08-24',
+			'owner' => 'Hao',
+			'email' => 'hao@zhang.com',
+			'address' => '802, Talimundok, Dau Mabalacat City',
+			'contact_number' => '09356661062'
 		]
 	];
-	Student::registerMany($students);
-	echo "<li>Added " . count($students) . " more students";
+	Pets::registerMany($pets);
+	echo "<li>Added " . count($pets) . " more pets";
 	echo "<br /><a href='index.php'>Proceed to Index Page</a>";
 
 } catch (PDOException $e) {
